@@ -1,0 +1,14 @@
+name: PR Agent Analysis
+
+on:
+  pull_request_target:
+    types: [opened, reopened, ready_for_review]
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  call-pr-agent-analysis:
+    uses: tminhtri1910-org/shared-workflows/.github/workflows/sem_pr_agent.yml@main
+    secrets: inherit
